@@ -154,39 +154,40 @@
 
     <script>
         const questions = [
-            { id: 1, type: "mcq", text: String.raw`If $A+B+C=\pi$ and $8\sin\left(A+\frac{C}{2}\right)=k\sin\frac{C}{2}$, then $\tan\frac{A}{2}\tan\frac{B}{2} =$`, options: [String.raw`$\frac{k-1}{k+1}$`, String.raw`$\frac{k+1}{k-1}$`, String.raw`$\frac{k+1}{k-1}$`, String.raw`$\frac{k+1}{k}$`], correct: 0 },
-            { id: 2, type: "mcq", text: String.raw`The value of $\sin 55^{\circ}-\sin 19^{\circ}+\sin 53^{\circ}-\sin 17^{\circ}$ is always equal to`, options: [String.raw`$\cot 1^{\circ}$`, String.raw`$\sin 1^{\circ}$`, String.raw`$\tan 1^{\circ}$`, String.raw`$\cos 1^{\circ}$`], correct: 3 },
-            { id: 3, type: "mcq", text: String.raw`Exact value of $\cos^{2}73^{\circ}+\cos^{2}47^{\circ}-\sin^{2}43^{\circ}+\sin^{2}107^{\circ}$ is equal to:`, options: ["1/2", "3/4", "1", "None"], correct: 2 },
-            { id: 4, type: "mcq", text: String.raw`The expression $\frac{1+\sin 2\alpha}{\cos(2\alpha-2\pi)\tan\left(\alpha-\frac{3\pi}{4}\right)}-\frac{1}{4}\sin 2\alpha\left[\cot\frac{\alpha}{2}+\cot\left(\frac{3\pi}{2}-\frac{\alpha}{2}\right)\right]$ is equal to`, options: ["1", "0", String.raw`$2\sin^{2}(\alpha/2)$`, String.raw`$\sin^{2}\alpha$`], correct: 2 },
-            { id: 5, type: "mcq", text: String.raw`The value of $x$ satisfying the equation $2^{\log_{3}x}+8=3\cdot x^{\log_{9}4}$ is:`, options: ["an irrational number", "an odd prime number", "relatively prime with 4", "a rational number which is not an integer"], correct: 2 },
-            { id: 6, type: "mcq", text: String.raw`If $\log_{y}x+\log_{x}y=7$, then the value of $(\log_{y}x)^{3}+(\log_{x}y)^{3}$ is`, options: ["322", "342", "343", "344"], correct: 0 },
-            { id: 7, type: "mcq", text: String.raw`Let $a, b, c$ be real numbers greater than 1. If $s=\log_{a}bc+\log_{b}ca+\log_{c}ab$, then`, options: [String.raw`$s\le9$`, String.raw`$s\ge9$`, String.raw`$s\le6$`, String.raw`$s\ge6$`], correct: 3 },
-            { id: 8, type: "mcq", text: String.raw`For a positive number $m$, $\text{characteristic of }\log_{10}m - \text{Mantissa of }\log_{10}m=1.5$. Then $\log_{100}\left(\frac{m}{\sqrt{10}}\right)=$`, options: ["1", "-1", "0", "Insufficient data"], correct: 0 },
-            { id: 9, type: "mcq", text: String.raw`The number of solutions of the equation $32^{\tan^{2}x}+32^{\sec^{2}x}=81$, $0\le x\le\frac{\pi}{4}$ is:`, options: ["1", "3", "0", "2"], correct: 0 },
-            { id: 10, type: "mcq", text: String.raw`If $x^{2}+9y^{2}-4x+3=0$, where $x, y\in \mathbb{R}$, then $x$ and $y$ respectively lie in the intervals:`, options: ["[1, 3] and [1, 3]", String.raw`$[1, 3]$ and $\left[-\frac{1}{3},\frac{1}{3}\right]$`, String.raw`$\left[-\frac{1}{3},\frac{1}{3}\right]$ and $[1, 3]$`, String.raw`$\left[-\frac{1}{3},\frac{1}{3}\right]$ and $\left[-\frac{1}{3},\frac{1}{3}\right]$`], correct: 1 },
-            { id: 11, type: "mcq", text: String.raw`The value of $2\sin\left(\frac{\pi}{8}\right)\sin\left(\frac{2\pi}{8}\right)\sin\left(\frac{3\pi}{8}\right)\sin\left(\frac{5\pi}{8}\right)\sin\left(\frac{6\pi}{8}\right)\sin\left(\frac{7\pi}{8}\right)$ is:`, options: [String.raw`$\frac{1}{4}$`, String.raw`$\frac{1}{8\sqrt{2}}$`, String.raw`$\frac{1}{8}$`, String.raw`$\frac{1}{4\sqrt{2}}$`], correct: 2 },
-            { id: 12, type: "mcq", text: String.raw`If $n$ is the number of solutions of the equation $2\cos x\left(4\sin\left(\frac{\pi}{4}+x\right)\sin\left(\frac{\pi}{4}-x\right)-1\right)=1, x\in[0,\pi]$ and $S$ is the sum of all these solutions, then the ordered pair $(n, S)$ is:`, options: [String.raw`$\left(3,\frac{5\pi}{3}\right)$`, "(3,2)", String.raw`$\left(3,\frac{13\pi}{9}\right)$`, String.raw`$\left(2,\frac{8\pi}{9}\right)$`], correct: 0 },
-            { id: 13, type: "mcq", text: String.raw`The sum of solutions of the equation $\frac{\cos x}{1+\sin x}=|\tan 2x|$ is, where $x\in\left(-\frac{\pi}{2},\frac{\pi}{2}\right)-\left\{\frac{\pi}{4},-\frac{\pi}{4}\right\}$:`, options: [String.raw`$\frac{\pi}{10}$`, String.raw`$-\frac{11\pi}{30}$`, String.raw`$\frac{\pi}{15}$`, String.raw`$-\frac{7\pi}{30}$`], correct: 1 },
-            { id: 14, type: "mcq", text: String.raw`A vertical pole fixed to the horizontal ground is divided in the ratio $3:7$ by a mark on it with the lower part shorter than the upper part. If the two parts subtend equal angles at a point on the ground $18\text{ m}$ away from the base of the pole, then the height of the pole (in meters) is:`, options: [String.raw`$12\sqrt{15}$`, String.raw`$12\sqrt{10}$`, "$8\sqrt{10}$", String.raw`$6\sqrt{10}$`], correct: 1 },
-            { id: 15, type: "mcq", text: String.raw`The sum of the roots of the equation, $x+1-2\log_{2}(3+2^{x})+2\log_{4}(10-2^{-x})=0$, is:`, options: [String.raw`$\log_{2}12$`, String.raw`$\log_{2}13$`, String.raw`$\log_{2}11$`, String.raw`$\log_{2}14$`], correct: 2 },
-            { id: 16, type: "mcq", text: String.raw`Let $\alpha$ and $\beta$ be the roots of $x^2-6x-2=0$. If $a_{n}=\alpha^{n}-\beta^{n}$ for $n\ge1$, then the value of $\frac{a_{10}-2a_{8}}{3a_{9}}$ is:`, options: ["2", "3", "1", "4"], correct: 0 },
-            { id: 17, type: "mcq", text: String.raw`The number of solutions of the equation, $x+2\tan x=\frac{\pi}{2}$ in the interval $[0,2\pi]$ is:`, options: ["5", "2", "4", "3"], correct: 3 },
-            { id: 18, type: "mcq", text: String.raw`The number of real values of $x$ satisfying the equation $\log_{(x+1)}(2x^{2}+7x+5)+\log_{(2x+5)}(x+1)^{2}=4$ is:`, options: ["0", "1", "2", "3"], correct: 1 },
-            { id: 19, type: "mcq", text: String.raw`The value of $(-\csc 6^{\circ}+\csc 18^{\circ}+\sec 24^{\circ}-\sec 36^{\circ}+\csc 42^{\circ}-\csc 78^{\circ})$ is equal to:`, options: ["-6", "6", "4", "2"], correct: 0 },
-            { id: 20, type: "mcq", text: String.raw`If $0<\theta<\frac{\pi}{2}$ and $f(\theta)=(1+\cot\theta-\csc\theta)(1+\tan\theta+\sec\theta)$, then $f\left(\frac{\pi}{12}\right)$ is equal to:`, options: ["0", "1", String.raw`$\sqrt{2}$`, "2"], correct: 3 },
-            { id: 21, type: "numeric", text: String.raw`It is known that $\left|2\cos^{3}\frac{\pi}{7}-\cos^{2}\frac{\pi}{7}-\cos\frac{\pi}{7}\right|$ is a rational number. Write this rational number in the form $p/q$, where $p$ and $q$ are coprime natural numbers, then find the value of $p+q$.`, correct: "5" },
-            { id: 22, type: "numeric", text: String.raw`If $\alpha, \beta, \gamma, \delta$ are the smallest positive angles in ascending order which have their sines equal to $\frac{7}{9}$, then find the value of $\left(12\sin\frac{\alpha}{2}+9\sin\frac{\beta}{2}+6\sin\frac{\gamma}{2}+3\sin\frac{\delta}{2}\right)$.`, correct: "8" },
-            { id: 23, type: "numeric", text: String.raw`The number of integral values of '$a$' such that both roots of the equation $ax^{2}+(3a+1)x-5=0$ are integers is:`, correct: "1" },
-            { id: 24, type: "numeric", text: String.raw` $ABCDEFG$ is a 7-sided regular polygon whose side length is 1, then find the value of $\frac{1}{AC}+\frac{1}{AD}$.`, correct: "1" },
-            { id: 25, type: "numeric", text: String.raw`If $\alpha, \beta$ are the roots of the equation $\lambda(x^{2}-x)+x+5=0$ and if $\lambda_{1}, \lambda_{2}$ are two values of $\lambda$ that satisfy $\frac{\alpha}{\beta}+\frac{\beta}{\alpha}=\frac{4}{5}$, then find the value of $\frac{\lambda_{1}}{\lambda_{2}^{2}}+\frac{\lambda_{2}}{\lambda_{1}^{2}}$.`, correct: "4048" }
+            { id: 1, type: "mcq", text: String.raw`In a triangle $ABC$, if $A-B=120^{\circ}$ and $\sin\frac{A}{2}\sin\frac{B}{2}\sin\frac{C}{2}=\frac{1}{32}$, then $\cos C$ equals:`, options: ["$3/4$", "$2/3$", "$5/6$", "$7/8$"], correct: 3 },
+            { id: 2, type: "mcq", text: String.raw`The value of the expression $\frac{1}{\cos 290^{\circ}}+\frac{1}{\sqrt{3}\sin 250^{\circ}}$ is:`, options: [String.raw`$\frac{\sqrt{3}}{4}$`, String.raw`$\frac{4}{\sqrt{3}}$`, String.raw`$\frac{2}{\sqrt{3}}$`, String.raw`$\frac{\sqrt{3}}{2}$`], correct: 1 },
+            { id: 3, type: "mcq", text: String.raw`If $a\cos^{3}\alpha+3a\cos\alpha\sin^{2}\alpha=m$ and $a\sin^{3}\alpha+3a\cos^{2}\alpha\sin\alpha=n$, then $(m+n)^{2/3}+(m-n)^{2/3}$ is equal to:`, options: ["$2a^{2}$", "$2a^{1/3}$", "$2a^{2/3}$", "$2a^{3}$"], correct: 2 },
+            { id: 4, type: "mcq", text: String.raw`If $x=\sin\alpha,$ $y=\sin\beta$, $z=\sin(\alpha+\beta)$ then $\cos(\alpha+\beta)=$`, options: [String.raw`$\frac{x^{2}+y^{2}+z^{2}}{2xy}$`, String.raw`$\frac{x^{2}+y^{2}-z^{2}}{xy}$`, String.raw`$\frac{z^{2}-x^{2}-y^{2}}{2xy}$`, String.raw`$\frac{z^{2}-x^{2}-y^{2}}{xy}$`], correct: 2 },
+            { id: 5, type: "mcq", text: String.raw`The expression $\frac{\cos 6x+6\cos 4x+15\cos 2x+10}{\cos 5x+5\cos 3x+10\cos x}$ is equal to:`, options: [String.raw`$\cos 2x$`, String.raw` $2\cos x$`, String.raw`$\cos^{2}x$`, String.raw` $1+\cos x$`], correct: 1 },
+            { id: 6, type: "mcq", text: String.raw`$\cos(A+B)+\sin(A-B)=?$`, options: [String.raw`$(\cos A-\sin A)(\cos B+\sin B)$`, String.raw`$(\sin A-\cos A)(\cos B+\sin B)$`, String.raw`$(\cos A-\sin A)(\cos B-\cos B)$`, String.raw`$(\cos A+\sin A)(\cos B-\sin B)$`], correct: 3 },
+            { id: 7, type: "mcq", text: String.raw`Let $\frac{\sin 3\theta}{\cos 2\theta}=p$ where $\theta\in\left(\frac{18\pi}{48},\frac{23\pi}{48}\right)$ and $\frac{\sin 3\beta}{\cos 2\beta}=q$ where $\beta\in\left(\frac{13\pi}{48},\frac{14\pi}{48}\right)$. Then:`, options: ["$p>0$ and $q>0$", "$p>0$ and $q<0$", "$p<0$ and $q<0$", "$p<0$ and $q>0$"], correct: 1 },
+            { id: 8, type: "mcq", text: String.raw`Each of the four statements given below are either True or False.<br>I. $\sin 765^{\circ}=-1/\sqrt{2}$<br>II. $\csc(-1410^{\circ})=2$<br>III. $\tan(13\pi/3)=1/\sqrt{3}$<br>IV. $\cot(-15\pi/4)=-1$<br><br>Indicate the correct order of sequence, where 'T' stands for true and 'F' stands for false:`, options: ["FTFT", "FFTT", "TFFF", "FTFF"], correct: 3 },
+            { id: 9, type: "mcq", text: String.raw`Find the smallest natural '$n$' such that $\tan(107n)^{\circ}=\frac{\cos 96^{\circ}+\sin 96^{\circ}}{\cos 96^{\circ}-\sin 96^{\circ}}$:`, options: ["$n=2$", "$n=3$", "$n=4$", "$n=5$"], correct: 1 },
+            { id: 10, type: "mcq", text: String.raw`The value of $\frac{\sin\frac{\pi}{48}+\sin\frac{3\pi}{48}+\sin\frac{5\pi}{48}+\sin\frac{7\pi}{48}}{\cos\frac{\pi}{48}+\cos\frac{3\pi}{48}+\cos\frac{5\pi}{48}+\cos\frac{7\pi}{48}}$ is equal to:`, options: ["$2-\sqrt{3}$", "$2+\sqrt{3}$", "$\sqrt{2}-1$", "$\sqrt{2}+1$"], correct: 0 },
+            { id: 11, type: "mcq", text: String.raw`Let $x=2^{(\log_{2}3)(\log_{3}4)\dots(\log_{99}100)}$, then the value of $\cos\left(\frac{x\pi}{4}\right)+\sin\left(\frac{x\pi}{4}\right)$ is equal to:`, options: ["1", String.raw`$\frac{1}{\sqrt{2}}$`, String.raw`$\sqrt{2}$`, "-1"], correct: 3 },
+            { id: 12, type: "mcq", text: String.raw`Number of solution(s) of the equation $\log_{\sqrt{x}}(x+|x-3|)=\log_{x}(2x+5+2|x-3|)$ is:`, options: ["0", "1", "2", "Infinitely many"], correct: 1 },
+            { id: 13, type: "mcq", text: String.raw`Given $\log_{10}2=0.3010$, $\log_{10}3=0.4771$. Using this information or otherwise, choose the correct statements:`, options: ["$8^{150}>9^{100}$", "$16^{75}>81^{50}$", "$\log_{2/3}3>0$", "None of these is correct"], correct: 0 },
+            { id: 14, type: "mcq", text: String.raw`In the inequality below the value of the angle is expressed in radian measure. Which one of the inequalities below is true?`, options: ["$\sin 1 < \sin 2 < \sin 3$", "$\sin 3 < \sin 2 < \sin 1$", "$\sin 2 < \sin 1 < \sin 3$", "$\sin 3 < \sin 1 < \sin 2$"], correct: 3 },
+            { id: 15, type: "mcq", text: String.raw`If $\theta$ is eliminated from the equations $x=a\cos(\theta-\alpha)$ and $y=b\cos(\theta-\beta)$, then $\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}-\frac{2xy}{ab}\cos(\alpha-\beta)$ is equal to:`, options: [String.raw`$\sec^{2}(\alpha-\beta)$`, String.raw`$\csc^{2}(\alpha-\beta)$`, String.raw`$\cos^{2}(\alpha-\beta)$`, String.raw`$\sin^{2}(\alpha-\beta)$`], correct: 3 },
+            { id: 16, type: "mcq", text: String.raw`The number of real values of $x$ satisfying the equation $3|x-2|+|1-5x|+4|3x+1|=13$ is:`, options: ["1", "4", "2", "3"], correct: 2 },
+            { id: 17, type: "mcq", text: String.raw`The product of all values of $x$ satisfying the equation $|x-1|^{\log_{3}x^{2}-2\log_{x}9}=(x-1)^{7}$ is:`, options: ["162", String.raw`$\frac{162}{\sqrt{3}}$`, String.raw`$\frac{81}{\sqrt{3}}$`, "81"], correct: 0 },
+            { id: 18, type: "mcq", text: String.raw`If $\tan\gamma=\sec\alpha\sec\beta+\tan\alpha\tan\beta$ then the greatest value of $\cos 2\gamma$ is:`, options: ["-1", String.raw`$\frac{1}{2}$`, String.raw`$-\frac{1}{2}$`, "0"], correct: 3 },
+            { id: 19, type: "mcq", text: String.raw`The complete set of values of $x$ satisfying the inequality $\log_{3}\left(\frac{|x^{2}-4x|+3}{x^{2}+|x-5|}\right)\ge0$ is:`, options: [String.raw`$(-\infty,-\frac{2}{3}]\cup[\frac{1}{2},2]$`, String.raw`$(-\infty,-1]\cup[\frac{1}{2},2]$`, String.raw`$[\frac{1}{2},\frac{2}{3}]\cup[1,\infty)$`, String.raw`$[-\infty,-\frac{1}{2}]\cup[\frac{2}{3},2]$`], correct: 0 },
+            { id: 20, type: "mcq", text: String.raw`Let $f(x)=\sqrt{1+x\sqrt{1+(x+1)\sqrt{1+(x+2)(x+4)}}}$ for $x>-1$ then the value of $\frac{f(\tan 22^{\circ})f(\tan 23^{\circ})}{\left|\left|\log_{\frac{1}{5}}12+\log_{\frac{1}{5}}3\right|-\left|\log_{\frac{1}{5}}20\right|\right|}$ is equal to:`, options: [String.raw`$\frac{1}{\log_{5}2}$`, String.raw`$\frac{1}{\log_{5}4}$`, "1", "2"], correct: 3 },
+            
+            // SECTION 2: NUMERICALS
+            { id: 21, type: "numeric", text: String.raw`If $\log_{10}\left(\frac{1025}{1024}\right)=a$ and $\log_{10}(2)=b$ then $\log_{10}(4100)=ma+nb$, where $m, n\in\mathbb{N}$. Find the value of $m+n$.`, correct: "13" },
+            { id: 22, type: "numeric", text: String.raw`Find the sum of all integral values of $x$ satisfying the inequality: $2\log_{\frac{1}{4}}(x+5)>\frac{9}{4}log_{\frac{1}{3\sqrt{3}}}(9)+\log_{\sqrt{x+5}}(2)$`, correct: "-2" },
+            { id: 23, type: "numeric", text: String.raw`Let $P(k)=\left(1+\cos\frac{\pi}{4k}\right)\left(1+\cos\frac{(2k-1)\pi}{4k}\right)\left(1+\cos\frac{(2k+1)\pi}{4k}\right)\left(1+\cos\frac{(4k-1)\pi}{4k}\right)$. If $P(5)+P(6)=\frac{7-\sqrt{a}-\sqrt{5}}{b}$ where $a, b\in\mathbb{N}$, find the value of $a+b$.`, correct: "44" },
+            { id: 24, type: "numeric", text: String.raw`The value of $\frac{\sec 11^{\circ}\sec 19^{\circ}-2\cot 71^{\circ}}{\cot 79^{\circ}}$ is equal to:`, correct: "2" },
+            { id: 25, type: "numeric", text: String.raw`The value of $\left(\frac{\tan\frac{\pi}{16}+\tan\frac{5\pi}{16}+\tan\frac{9\pi}{16}+\tan\frac{13\pi}{16}}{\sin\frac{\pi}{16}\cos\frac{\pi}{16}\left(\cos^{4}\frac{\pi}{16}-\sin^{4}\frac{\pi}{16}\right)}\right)^{2}$ is equal to:`, correct: "512" }
         ];
 
         const INIVIGILATOR_PIN = "1234";
         const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxGAYnm2X-Eht6uzdOsN0PwfrnimQwZG-cic_mzcD4ktUFZDA9pqhd3hT9ukkPQQidVUg/exec";
         
-        // 🏷️ SET THE TEST NAME HERE for future exams. 
-        // A unique tab with this exact name will automatically generate in your sheet!
-        const EXAM_NAME = "Mock Test 3";
+        // 🏷️ Test Name Configuration
+        const EXAM_NAME = "Mock Test 2";
 
         let currentIdx = 0;
         let userResponses = {};
@@ -322,7 +323,7 @@
                 document.getElementById('section-marking').innerText = "Marking Scheme: +4 for Correct, -1 for Incorrect.";
             } else {
                 document.getElementById('section-title').innerText = "Section 2: Integral / Numerical Answer Type";
-                document.getElementById('section-marking').innerText = "Marking Scheme: +4 for Correct, 0 if Unanswered.";
+                document.getElementById('section-marking').innerText = "Marking Scheme: +4 for Correct, -1 for Incorrect.";
             }
 
             document.getElementById('question-number-tag').innerText = `Question ${q.id} of 25`;
@@ -415,7 +416,8 @@
                         if (response.toString().toLowerCase() === q.correct.toString().toLowerCase()) {
                             questionMarks = 4; correctCount++; isCorrect = true;
                         } else {
-                            questionMarks = 0;
+                            // 🔥 UPDATED: Applied -1 penalty for incorrect numeric inputs in Section B
+                            questionMarks = -1; incorrectCount++;
                         }
                     }
                 }
@@ -494,7 +496,7 @@
 
         function transmitToGoogleSheets(name, email, mobile, secA, secB, total) {
             const payload = {
-                examName: EXAM_NAME, // 🏷️ Pipeline the unique test label payload parameter
+                examName: EXAM_NAME,
                 name: name,
                 email: email,
                 mobile: mobile,
