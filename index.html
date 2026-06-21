@@ -152,19 +152,28 @@
 
         let currentIdx = 0; let userResponses = {}; let timeRemaining = 75 * 60; let timerInterval; let testRunning = false; let isLockedOut = false;
 
-        function checkExamWindow() {
-            fetch(GOOGLE_SHEET_WEBAPP_URL)
-            .then(res => res.json())
-            .then(data => {
-                if(data.status === "OPEN") {
+                function checkExamWindow() {
+            // Checks status by executing a fast JSONP window hook to bypass browser CORS blocks
+            const script = document.createElement('script');
+            
+            // Creates a temporary global listener to receive the sheet status securely
+            window.handleStatusResponse = function(data) {
+                if(data && data.status === "OPEN") {
                     document.getElementById('closed-screen').classList.add('hidden');
                     document.getElementById('login-screen').classList.remove('hidden');
                 } else {
                     document.getElementById('closed-screen').classList.remove('hidden');
                     document.getElementById('login-screen').classList.add('hidden');
                 }
-            }).catch(() => alert("Network checking error. Syncing interface failed."));
+                // Cleans up the temporary script element from the document body
+                script.remove();
+                delete window.handleStatusResponse;
+            };
+
+            script.src = GOOGLE_SHEET_WEBAPP_URL + "?callback=handleStatusResponse&ts=" + new Date().getTime();
+            document.body.appendChild(script);
         }
+
 
         function setupKaTeX() {
             window.renderMath = function() {
